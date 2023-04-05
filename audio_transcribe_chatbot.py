@@ -1,9 +1,8 @@
 import gradio as gr
 import openai
-import configuration
 import subprocess
-
-openai.api_key = configuration.OPENAI_API_KEY
+OPENAI_API_KEY = "PASTE_KEY_HERE"
+openai.api_key = OPENAI_API_KEY
 
 messages = [{"role": "system", "content": 'You are a Finance advisor. Respond to all input in 25 words or less.'}]
 
@@ -29,5 +28,5 @@ def transcribe_and_chat(audio):
 
     return chat_transcript
 
-ui = gr.Interface(fn=transcribe_and_chat, inputs=gr.Audio(source="microphone", type="filepath"), outputs="text")
-ui.launch()
+app = gr.Interface(fn=transcribe_and_chat, inputs=gr.Audio(source="microphone", type="filepath"), outputs="text")
+app.launch()
