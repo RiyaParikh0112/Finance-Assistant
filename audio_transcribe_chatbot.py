@@ -4,7 +4,7 @@ import subprocess
 OPENAI_API_KEY = "PASTE_KEY_HERE"
 openai.api_key = OPENAI_API_KEY
 
-messages = [{"role": "system", "content": 'You are a Finance advisor. Respond to all input in 25 words or less.'}]
+messages = [{"role": "system", "content": 'You are a Finance advisor. Respond to all input in 250 words or less. Take input from valid and legitimate finance advisors'}]
 
 def transcribe_and_chat(audio):
     global messages
